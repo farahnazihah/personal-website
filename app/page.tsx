@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
-import Timeline from "./components/timeline";
+import Timeline from "@/components/timeline";
 import resume from "../data/resume.json";
 import { FaRegEnvelope } from "react-icons/fa";
 
