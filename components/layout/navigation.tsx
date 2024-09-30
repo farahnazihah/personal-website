@@ -37,7 +37,7 @@ export const Footer = () => {
             <FaGithub />
           </a>
         </div>
-        <p className="text-tosca">
+        <p className="text-tosca my-4">
           🎨 and <span className="text-orange-400 font-bold">{"</>"}</span> with
           ❤️ by farah
         </p>

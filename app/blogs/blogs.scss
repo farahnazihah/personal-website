@@ -12,11 +12,15 @@
   }
 
   h1 {
-    @apply text-4xl text-center tracking-tight;
+    @apply text-4xl text-center tracking-tight py-2;
   }
 
   h2 {
-    @apply font-poppins text-3xl tracking-tight;
+    @apply font-poppins text-3xl tracking-tight py-4;
+  }
+
+  h3 {
+    @apply font-poppins text-xl tracking-tight py-4;
   }
 
   ol {
@@ -32,10 +36,18 @@
   }
 
   blockquote {
-    @apply pl-5 italic border-l-2 border-neutral-600 border-opacity-40;
+    @apply pl-5 italic border-l-2 border-neutral-600 border-opacity-40 text-gray-500;
   }
 
   img {
     @apply md:w-2/3 mx-auto;
+  }
+
+  hr {
+    @apply my-8 border border-dotted border-neutral-600 border-opacity-40;
+  }
+
+  spoiler {
+    @apply bg-black hover:bg-background;
   }
 }
