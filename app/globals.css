@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f8f8;
+  --foreground: #f8f8f8;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f8f8f8;
+    --foreground: #f8f8f8;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: #f8f8f8;
+  background: #f8f8f8;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,4 +24,16 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.icon-buttons > * {
+  @apply text-tosca hover:text-dark-tosca;
+}
+
+a {
+  @apply text-tosca hover:text-dark-tosca;
+}
+
+.custom a {
+  @apply text-black hover:text-dark-tosca;
 }
