@@ -41,7 +41,7 @@ const Profile = () => {
   );
 };
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-16">
       <Profile />
