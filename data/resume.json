@@ -1,0 +1,77 @@
+{
+  "education": [
+    {
+      "title": "Universitas Indonesia",
+      "date": "2019 - 2023",
+      "location": "Depok, Indonesia",
+      "details": [
+        {
+          "position": "Teaching Assistant",
+          "date": "2020 - 2023",
+          "description": "**Assigned courses**: Programming Foundations, Data Structure and Algorithm, Discrete Mathematics, Software Engineering Project",
+          "points": [
+            "Provided assistance, evaluated performance, and delivered constructive feedback to a total of over 50 students",
+            "Created and graded assignments, conducted assistance sessions"
+          ]
+        },
+        {
+          "position": "Bachelor of Computer Science",
+          "date": "2019 - 2023",
+          "points": [
+            "**Relevant courses**: Data Structures & Algorithms, Platform Based Programming, Advanced Programming, Software Engineering, Databases, Human-Computer Interaction, Algorithms Design & Analysis, Web Service & Web Application, Computer Network, etc.",
+            "**Final Project**: [Development of Mobile Application for Kangaroo Mother Care for Low Birth Babies.](https://lib.ui.ac.id/detail?id=9999920541918&lokasi=lokal)"
+          ]
+        }
+      ]
+    }
+  ],
+  "work_experience": [
+    {
+      "title": "[Swift Management AG](https://www.nothelferambahnhof.ch/)",
+      "location": "Basel, Switzerland",
+      "details": [
+        {
+          "position": "Software Developer",
+          "date": "August 2024 - present",
+          "description": "Provide first aid courses for driving licenses and corporate first aid training across Switzerland",
+          "points": [
+            "Maintained the [Nothelferkurs am Bahnhof](https://www.nothelferambahnhof.ch/) website and admin dashboard",
+            "Developed a visual editor for managing website content.",
+            "Tech stack: React, Next.js, Prisma, PostgreSQL"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "[PT. Good Doctor Technology](https://www.gooddoctor.co.id/)",
+      "location": "Jakarta, Indonesia",
+      "details": [
+        {
+          "position": "Frontend Engineer",
+          "date": "August 2023 - August 2024",
+          "description": "Good Doctor Technology (Good Doctor) is a technology-based integrated healthcare provider.",
+          "points": [
+            "Collaborated in the Commerce and Payment squad, developed internal admin dashboard, Merchant Portal, and the main Good Doctor client web application.",
+            "Tech stack: Next.js, Redux, RTK Query, Storybook, TypeScript"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "[Female Daily Network](https://www.femaledaily.com/)",
+      "location": "Jakarta, Indonesia",
+      "details": [
+        {
+          "position": "Frontend Engineer",
+          "date": "March 2023 - August 2023",
+          "description": "Female Daily Network is a Media Platform catering to all things beauty, on a mission to revolutionize the way Indonesian women discover, share and buy beauty products and services.",
+          "points": [
+            "Collaborated in the Commerce Squad to develop and maintain the [e-Commerce website for Female Daily](https://studio.femaledaily.com) using Next.js, Javascript, and Redux",
+            "Improved code readability and maintainability, enhanced performance, and improved user experience, of an internal web application using Next.js, TypeScript, and React Query",
+            "Created components and Storybook documentation for the internal Female Daily components library "
+          ]
+        }
+      ]
+    }
+  ]
+}
