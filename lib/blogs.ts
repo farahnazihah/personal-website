@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import moment from "moment";
+import { BlogProps } from "@/types/Blog";
 
 const articlesDirectory = path.join(process.cwd(), "blogs");
 
@@ -9,7 +10,7 @@ export const getSortedArticles = () => {
   const fileNames = fs.readdirSync(articlesDirectory);
 
   const allArticlesData = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.md$/, "");
+    const id = fileName.replace(/\.mdx$/, "");
 
     const fullPath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf-8");
@@ -20,18 +21,22 @@ export const getSortedArticles = () => {
       id,
       title: matterResult.data.title,
       date: matterResult.data.date,
-      category: matterResult.data.category
-    };
+      category: matterResult.data.category,
+      snippet: matterResult.data.snippet,
+      banner: matterResult.data.banner,
+      link: `/blogs/${id}`
+    } as BlogProps;
   });
 
   return allArticlesData.sort((a, b) => {
     const format = "DD-MM-YYYY";
     const dateOne = moment(a.date, format);
     const dateTwo = moment(b.date, format);
+    // Sort by date, newest first
     if (dateOne.isBefore(dateTwo)) {
-      return -1;
-    } else if (dateTwo.isAfter(dateOne)) {
       return 1;
+    } else if (dateTwo.isAfter(dateOne)) {
+      return -1;
     } else {
       return 0;
     }
@@ -49,7 +54,9 @@ export const getArticleData = async (id: string) => {
     id,
     contentHtml: matterResult.content,
     title: matterResult.data.title,
+    date: moment(matterResult.data.date, "DD-MM-YYYY").format("MMMM Do YYYY"),
     category: matterResult.data.category,
-    date: moment(matterResult.data.date, "DD-MM-YYYY").format("MMMM Do YYYY")
+    snippet: matterResult.data.snippet,
+    banner: matterResult.data.banner
   };
 };
