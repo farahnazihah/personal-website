@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Poppins } from "next/font/google";
-import { Navbar, Footer } from "@/components/layout/navigation";
+import { Navbar, Footer } from "@/components/layout/Navigation";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,6 +15,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900"
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -37,9 +38,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${poppins.variable} bg-background`}
       >
         <Navbar />
-        <div className="w-full flex justify-center min-h-screen">
-          <div className="flex flex-col text-black px-4 md:px-16 py-16 max-w-screen-lg">
-            <main>{children}</main>
+        <div className="w-full flex justify-center">
+          <div className="text-black px-4 md:px-16 py-4 md:py-16 max-w-screen-lg min-h-[80vh] md:min-h-[70vh]">
+            <main className="h-full">{children}</main>
           </div>
         </div>
         <Footer />

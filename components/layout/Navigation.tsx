@@ -23,7 +23,7 @@ export const Footer = () => {
   return (
     <footer>
       <div className="flex flex-col items-center justify-center">
-        <div className="flex flex-row my-8 gap-8 items-center px-4 md:px-16 max-w-screen-lg icon-buttons text-5xl">
+        <div className="flex flex-row my-4 gap-8 items-center px-4 md:px-16 max-w-screen-lg icon-buttons text-5xl">
           <a href="https://www.linkedin.com/in/farahnazihah/" target="_blank">
             <FaLinkedinIn />
           </a>
@@ -37,7 +37,7 @@ export const Footer = () => {
             <FaGithub />
           </a>
         </div>
-        <p className="text-tosca my-4">
+        <p className="text-tosca my-1 md:my-4">
           🎨 and <span className="text-orange-400 font-bold">{"</>"}</span> with
           ❤️ by farah
         </p>

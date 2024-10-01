@@ -12,15 +12,15 @@
   }
 
   h1 {
-    @apply text-4xl text-center tracking-tight py-2;
+    @apply text-4xl text-center tracking-tight pt-4 pb-1;
   }
 
   h2 {
-    @apply font-poppins text-3xl tracking-tight py-4;
+    @apply font-bold text-3xl tracking-tight pt-4 pb-1;
   }
 
   h3 {
-    @apply font-poppins text-xl tracking-tight py-4;
+    @apply font-bold text-tosca text-xl tracking-tight pt-4 pb-1;
   }
 
   ol {
@@ -44,10 +44,10 @@
   }
 
   hr {
-    @apply my-8 border border-dotted border-neutral-600 border-opacity-40;
+    @apply my-4 border-neutral-600 border-opacity-20 mx-24;
   }
 
   spoiler {
-    @apply bg-black hover:bg-background;
+    @apply bg-tosca text-tosca hover:bg-background active:bg-background;
   }
 }
