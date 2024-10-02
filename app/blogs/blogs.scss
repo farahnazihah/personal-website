@@ -1,0 +1,53 @@
+@import "../../app/globals.css";
+
+.article {
+  @apply font-poppins;
+
+  p {
+    @apply mt-4;
+  }
+
+  strong {
+    @apply text-tosca;
+  }
+
+  h1 {
+    @apply text-4xl text-center tracking-tight pt-4 pb-1;
+  }
+
+  h2 {
+    @apply font-bold text-3xl tracking-tight pt-4 pb-1;
+  }
+
+  h3 {
+    @apply font-bold text-tosca text-xl tracking-tight pt-4 pb-1;
+  }
+
+  ol {
+    @apply list-decimal flex flex-col mx-10 gap-2;
+  }
+
+  ul {
+    @apply list-disc flex flex-col mx-10 gap-2;
+  }
+
+  pre {
+    @apply bg-neutral-950 text-neutral-50 p-5 overflow-scroll;
+  }
+
+  blockquote {
+    @apply pl-5 italic border-l-2 border-neutral-600 border-opacity-40 text-gray-500;
+  }
+
+  img {
+    @apply md:w-2/3 mx-auto;
+  }
+
+  hr {
+    @apply my-4 border-neutral-600 border-opacity-20 mx-24;
+  }
+
+  spoiler {
+    @apply bg-tosca text-tosca hover:bg-background active:bg-background;
+  }
+}
