@@ -4,7 +4,7 @@ import Timeline from "@/components/timeline";
 import resume from "../data/resume.json";
 import { FaRegEnvelope } from "react-icons/fa";
 
-const Profile = () => {
+function Profile() {
   return (
     <div className="flex flex-col md:flex-row gap-16 items-center self-center text-center md:text-left max-w-[46rem]">
       <Image
@@ -39,9 +39,9 @@ const Profile = () => {
       </div>
     </div>
   );
-};
+}
 
-const Home = () => {
+export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center gap-16">
       <Profile />
@@ -49,6 +49,4 @@ const Home = () => {
       <Timeline section="Work Experience" contents={resume.work_experience} />
     </div>
   );
-};
-
-export default Home;
+}
