@@ -43,7 +43,7 @@ function Profile() {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center gap-16">
+    <div className="flex flex-col items-center justify-center gap-16  md:py-16">
       <Profile />
       <Timeline section="Education" contents={resume.education} />
       <Timeline section="Work Experience" contents={resume.work_experience} />

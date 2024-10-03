@@ -16,6 +16,7 @@ type responseProps = {
         nodes: Record<string, any>[];
       };
       characters: { nodes: Record<string, any>[] };
+      manga: { nodes: Record<string, any>[] };
     };
   };
 };
@@ -50,6 +51,18 @@ const document = gql`
             siteUrl
           }
         }
+        manga {
+          nodes {
+            id
+            siteUrl
+            title {
+              romaji
+            }
+            coverImage {
+              large
+            }
+          }
+        }
       }
     }
   }
@@ -64,9 +77,9 @@ export const getFavorites = async () => {
     document,
     variables
   )) as responseProps;
-  if (!response) return { animes: [], characters: [] };
+  if (!response) return { animes: [], characters: [], manga: [] };
 
-  const { anime, characters } = response.User.favourites;
+  const { anime, characters, manga } = response.User.favourites;
 
   const favAnimes = anime.nodes.map(
     (item) =>
@@ -88,8 +101,19 @@ export const getFavorites = async () => {
       } as favProps)
   );
 
+  const favManga = manga.nodes.map(
+    (item) =>
+      ({
+        id: item.id,
+        title: item.title.romaji,
+        image: item.coverImage.large,
+        link: item.siteUrl
+      } as favProps)
+  );
+
   return {
-    animes: favAnimes,
-    characters: favCharacters
+    animes: favAnimes.slice(0, 5),
+    characters: favCharacters.slice(0, 5),
+    manga: favManga.slice(0, 5)
   };
 };
