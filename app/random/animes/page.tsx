@@ -1,5 +1,5 @@
 import { getActivity } from "@/anilist-graphql/activity";
-import { getFavorites } from "@/anilist-graphql/favorites";
+import { favProps, getFavorites } from "@/anilist-graphql/favorites";
 import FavSection from "@/components/Card/FavoriteCard";
 import { IoInformationCircleOutline } from "react-icons/io5";
 
@@ -21,7 +21,7 @@ const Animes = async () => {
         </p>
       </div>
       <FavSection
-        items={activity}
+        items={activity as favProps[]}
         title={"In the Queue"}
         subtitle={
           "Not much happening bcs Switzerland sucks, I got region locked. Enjoy the easy-accessed anime while you're still in SEA I guess."
