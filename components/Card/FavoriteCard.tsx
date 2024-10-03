@@ -6,19 +6,19 @@ import Image from "next/image";
 const FavoriteCard = ({ item, index }: { item: favProps; index: number }) => {
   return (
     <a
-      className="bg-white shadow-sm rounded-md grid grid-cols-2 w-46 md:w-52 gap-1 text-wrap hover:ring-1 hover:ring-gray-300"
+      className="bg-white shadow-sm rounded-md w-full md:w-auto flex flex-row h-32 gap-1 text-wrap hover:ring-1 hover:ring-gray-300"
       href={item.link}
     >
-      <div className="relative md:h-36">
+      <div className="relative h-32 w-20">
         <Image
           src={item.image}
           alt={item.title}
           objectFit="cover"
           fill
-          className="w-full object-cover rounded-l-md"
+          className="rounded-l-md"
         />
       </div>
-      <div className="flex flex-col p-1 pr-2 justify-center gap-1">
+      <div className="flex flex-col p-1 pr-2 justify-center gap-1 md:max-w-36">
         <h1 className="text-5xl font-bold text-gray-200">#{index}</h1>
         <p className="break-words text-sm text-gray-500 w-full">{item.title}</p>
       </div>
