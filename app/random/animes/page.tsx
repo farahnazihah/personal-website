@@ -24,7 +24,7 @@ const Animes = async () => {
         items={activity as favProps[]}
         title={"In the Queue"}
         subtitle={
-          "Not much happening bcs Switzerland sucks, I got region locked. Enjoy the easy-accessed anime while you're still in SEA I guess."
+          "Not much is happening bcs Switzerland sucks, I got region locked. Enjoy the easy-accessed anime while you're still in SEA I guess."
         }
       />
       <FavSection
