@@ -22,7 +22,6 @@ const tooltipTextFunction = ({
   countryValue,
   countryName
 }: CountryContext) => {
-  console.log(countryCode, countryValue, countryName);
   if (countryCode === "ID") {
     return `${countryName}: Home`;
   } else if (countryCode === "CH") {
