@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <Navbar />
         <div className="w-full flex justify-center">
-          <div className="text-black px-4 md:px-16 py-4 max-w-screen-lg min-h-[80vh] md:min-h-[70vh]">
+          <div className="text-black px-4 md:px-16 py-4 w-full max-w-screen-lg mx-auto min-h-[80vh] md:min-h-[70vh]">
             <main className="h-full">{children}</main>
           </div>
         </div>

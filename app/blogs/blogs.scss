@@ -1,7 +1,7 @@
 @import "../../app/globals.css";
 
 .article {
-  @apply font-poppins;
+  @apply font-poppins mx-auto;
 
   p {
     @apply mt-4;
@@ -49,5 +49,9 @@
 
   spoiler {
     @apply bg-tosca text-tosca hover:bg-background active:bg-background;
+  }
+
+  .pic-title {
+    @apply w-full text-center text-sm text-gray-400;
   }
 }

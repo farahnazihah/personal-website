@@ -1,7 +1,7 @@
-import { ComingSoon } from "@/components/layout/Template";
+import { TemplateText } from "@/components/layout/Template";
 
 const Projects = () => {
-  return <ComingSoon />;
+  return <TemplateText text="Coming Soon 😞" />;
 };
 
 export default Projects;

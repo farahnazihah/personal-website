@@ -3,6 +3,8 @@ import { favProps, getFavorites } from "@/anilist-graphql/favorites";
 import FavSection from "@/components/Card/FavoriteCard";
 import { IoInformationCircleOutline } from "react-icons/io5";
 
+export const revalidate = 3600; // revalidate every hour
+
 const Animes = async () => {
   const res = await getFavorites();
   const { animes: favAnimes, characters: favCharacters, manga: favManga } = res;

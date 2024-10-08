@@ -34,7 +34,7 @@ export default function Traces() {
 
       <div className="bg-tosca my-4 bg-opacity-20 rounded-lg p-4 flex flex-row gap-2 items-center md:hidden">
         <IoInformationCircleOutline className="text-2xl" />
-        <p>{"😞 Use desktop to see it better."}</p>
+        <p>{"😞 Use desktop for better experience"}</p>
       </div>
       <CustomWorldMap data={data} />
     </div>
