@@ -1,4 +1,4 @@
-import { BlogProps } from "@/types/Blog";
+import { blogCategories, BlogProps } from "@/types/Blog";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -28,7 +28,9 @@ const BlogCard = ({
           <div className="text-gray-600 text-sm md:text-md">{snippet}</div>
           <div className="flex flex-wrap gap-2 text-tosca text-xs">
             {category
-              ? category.map((c, idx) => <div key={idx}>{c}</div>)
+              ? category.map((c, idx) => (
+                  <div key={idx}>{blogCategories[c]}</div>
+                ))
               : null}
           </div>
         </div>

@@ -12,7 +12,6 @@ export const getSortedArticles = (category = "all") => {
   const allArticlesData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.mdx$/, "");
 
-    console.log(category);
     const fullPath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf-8");
 
@@ -65,5 +64,5 @@ export const getArticleData = async (id: string) => {
     category: matterResult.data.category,
     snippet: matterResult.data.snippet,
     banner: matterResult.data.banner
-  };
+  } as BlogProps;
 };

@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
+import { blogCategories } from "@/types/Blog";
 
 const Blog = async ({ params }: { params: { slugs: string } }) => {
   if ((params.slugs as string) === "categories") {
@@ -24,6 +25,14 @@ const Blog = async ({ params }: { params: { slugs: string } }) => {
           <IoMdArrowRoundBack /> Back
         </Link>
         <h1>{articleData.title}</h1>
+        <div className="flex flex-wrap gap-2 text-tosca my-4">
+          Categories:{" "}
+          {articleData.category
+            ? articleData.category.map((c, idx) => (
+                <div key={idx}>{blogCategories[c]}</div>
+              ))
+            : null}
+        </div>
         <p className="text-gray-400 text-sm">{articleData.date}</p>
         <ReactMarkdown rehypePlugins={[rehypeRaw] as PluggableList}>
           {articleData.contentHtml}
