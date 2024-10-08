@@ -9,6 +9,7 @@ import Link from "next/link";
 import { blogCategories } from "@/types/Blog";
 
 import "../blogs.scss";
+import Image from "next/image";
 
 const Blog = async ({ params }: { params: { slugs: string } }) => {
   if ((params.slugs as string) === "categories") {
@@ -18,6 +19,17 @@ const Blog = async ({ params }: { params: { slugs: string } }) => {
 
   return (
     <section className="blog">
+      {articleData.banner ? (
+        <div className="relative w-full h-32 mb-8 blur-[2px]">
+          <Image
+            objectFit="cover"
+            fill
+            src={articleData.banner?.link}
+            alt={articleData.banner?.alt}
+            className="w-full h-20"
+          />
+        </div>
+      ) : null}
       <article className="article max-w-screen-md">
         <Link
           href="/blogs"
@@ -25,6 +37,7 @@ const Blog = async ({ params }: { params: { slugs: string } }) => {
         >
           <IoMdArrowRoundBack /> Back
         </Link>
+
         <h1>{articleData.title}</h1>
         <div className="flex flex-wrap gap-2 text-tosca my-4">
           Categories:{" "}

@@ -14,13 +14,15 @@ const BlogCard = ({
     <Link href={link}>
       <div className="flex flex-col md:flex-row bg-white shadow-sm rounded-lg gap-2 hover:ring-1 ring-tosca">
         <div className="relative min-h-12 sm:w-full md:w-1/3 md:order-2">
-          <Image
-            src={banner ? banner.link : "/basel.jpg"}
-            alt={banner ? banner.alt : "banner blog"}
-            fill
-            objectFit="cover"
-            className="md:rounded-r-lg"
-          />
+          {banner ? (
+            <Image
+              src={banner.link}
+              alt={banner ? banner.alt : "banner blog"}
+              fill
+              objectFit="cover"
+              className="md:rounded-r-lg"
+            />
+          ) : null}
         </div>
         <div className="flex flex-col gap-2 p-2 md:p-4 w-full">
           <h4 className="text-tosca font-bold text-xl">{title}</h4>

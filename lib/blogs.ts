@@ -38,13 +38,14 @@ export const getSortedArticles = (category = "all") => {
       const format = "DD-MM-YYYY";
       const dateOne = moment(a.date, format);
       const dateTwo = moment(b.date, format);
+      console.log(dateOne.toLocaleString(), dateTwo.toLocaleString());
       // Sort by date, newest first
       if (dateOne.isBefore(dateTwo)) {
+        console.log(1);
         return 1;
-      } else if (dateTwo.isAfter(dateOne)) {
-        return -1;
       } else {
-        return 0;
+        console.log(0);
+        return -1;
       }
     });
 };
