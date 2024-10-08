@@ -16,7 +16,7 @@ const BlogCategories = ({
   };
 
   return (
-    <div className="text-gray-400 flex gap-4 my-8 w-full">
+    <div className="text-gray-400 flex flex-wrap gap-4 my-8 w-full">
       {Object.keys(blogCategories).map((key) => (
         <div
           key={key}

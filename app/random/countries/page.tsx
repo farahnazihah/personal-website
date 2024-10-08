@@ -28,9 +28,7 @@ const data = [
 export default function Traces() {
   return (
     <div className="py-12">
-      <h1 className="text-3xl font-bold text-tosca text-center">
-        {"Countries I've been to"}
-      </h1>
+      <h1 className="title">{"Countries I've been to"}</h1>
 
       <div className="bg-tosca my-4 bg-opacity-20 rounded-lg p-4 flex flex-row gap-2 items-center md:hidden">
         <IoInformationCircleOutline className="text-2xl" />

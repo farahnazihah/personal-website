@@ -1,6 +1,5 @@
 import ReactMarkdown from "react-markdown";
 import { getArticleData } from "../../../lib/blogs";
-import "../blogs.scss";
 import rehypeRaw from "rehype-raw";
 import { PluggableList } from "react-markdown/lib/react-markdown";
 import { redirect } from "next/navigation";
@@ -9,6 +8,8 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
 import { blogCategories } from "@/types/Blog";
 
+import "../blogs.scss";
+
 const Blog = async ({ params }: { params: { slugs: string } }) => {
   if ((params.slugs as string) === "categories") {
     redirect("/blogs/categories/all");
@@ -16,7 +17,7 @@ const Blog = async ({ params }: { params: { slugs: string } }) => {
   const articleData = await getArticleData(params.slugs);
 
   return (
-    <section>
+    <section className="blog">
       <article className="article max-w-screen-md">
         <Link
           href="/blogs"

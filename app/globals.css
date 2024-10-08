@@ -37,3 +37,15 @@ a {
 .custom a {
   @apply text-black hover:text-dark-tosca;
 }
+
+.title {
+  @apply text-tosca font-bold text-4xl text-center;
+}
+
+h2 {
+  @apply font-bold text-3xl tracking-tight pt-4 pb-1;
+}
+
+h3 {
+  @apply font-bold text-tosca text-xl tracking-tight pt-4 pb-1;
+}
