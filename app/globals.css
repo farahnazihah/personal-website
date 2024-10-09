@@ -42,6 +42,10 @@ a {
   @apply text-tosca font-bold text-4xl text-center;
 }
 
+h1 {
+  @apply font-bold text-4xl tracking-tight pt-4 pb-1 text-tosca text-center;
+}
+
 h2 {
   @apply font-bold text-3xl tracking-tight pt-4 pb-1;
 }

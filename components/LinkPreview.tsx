@@ -16,11 +16,11 @@ const LinkPreview = ({
       target="_blank"
     >
       {icon ? (
-        <div className="flex items-center text-white font-bold bg-tosca px-2 rounded-l-md">
+        <div className="flex items-center text-white font-bold bg-tosca p-2 rounded-l-md text-2xl">
           {icon}
         </div>
       ) : null}
-      <div className="px-2 text-tosca">{title}</div>
+      <div className="p-2 text-tosca">{title}</div>
     </a>
   );
 };

@@ -1,7 +1,5 @@
-"use client";
-
+import { Alert } from "@/components/layout/Template";
 import dynamic from "next/dynamic";
-import { IoInformationCircleOutline } from "react-icons/io5";
 
 const CustomWorldMap = dynamic(() => import("@/components/WorldMap"), {
   ssr: false
@@ -29,10 +27,8 @@ export default function Traces() {
   return (
     <div className="py-12">
       <h1 className="title">{"Countries I've been to"}</h1>
-
-      <div className="bg-tosca my-4 bg-opacity-20 rounded-lg p-4 flex flex-row gap-2 items-center md:hidden">
-        <IoInformationCircleOutline className="text-2xl" />
-        <p>{"😞 Use desktop for better experience"}</p>
+      <div className="md:hidden">
+        <Alert text="😞 Use desktop for better experience" />
       </div>
       <CustomWorldMap data={data} />
     </div>
