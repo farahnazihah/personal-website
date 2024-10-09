@@ -1,5 +1,6 @@
 import { getActivity } from "@/anilist-graphql/activity";
 import { favProps, getFavorites } from "@/anilist-graphql/favorites";
+import useTracker from "@/app/hooks/useTracker";
 import FavSection from "@/components/Card/FavoriteCard";
 import { IoInformationCircleOutline } from "react-icons/io5";
 
@@ -8,8 +9,10 @@ export const revalidate = 3600; // revalidate every hour
 const Animes = async () => {
   const res = await getFavorites();
   const { animes: favAnimes, characters: favCharacters, manga: favManga } = res;
-
   const { activity } = await getActivity();
+
+  const tracker = useTracker();
+  tracker.page_visit("Animes page");
 
   return (
     <section className="flex flex-col gap-12">

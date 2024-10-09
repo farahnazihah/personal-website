@@ -1,4 +1,5 @@
 import { Alert } from "@/components/layout/Template";
+import useTracker from "@/app/hooks/useTracker";
 import dynamic from "next/dynamic";
 
 const CustomWorldMap = dynamic(() => import("@/components/WorldMap"), {
@@ -24,6 +25,9 @@ const data = [
 ];
 
 export default function Traces() {
+  const tracker = useTracker();
+  tracker.page_visit("Countries page");
+
   return (
     <div className="py-12">
       <h1 className="title">{"Countries I've been to"}</h1>
