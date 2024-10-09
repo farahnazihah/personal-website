@@ -6,6 +6,7 @@ import { LuFlagTriangleRight } from "react-icons/lu";
 import LinkPreview from "@/components/LinkPreview";
 import { FavoriteCard } from "@/components/Card/FavoriteCard";
 import { Alert } from "@/components/layout/Template";
+import useTracker from "@/app/hooks/useTracker";
 
 type listProps = {
   label: string;
@@ -111,6 +112,9 @@ const RecomendationSection = ({
 };
 
 const Recomendations = () => {
+  const tracker = useTracker();
+  tracker.page_visit("Recommendations page");
+
   return (
     <>
       <h1>Recomendations</h1>

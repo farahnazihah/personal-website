@@ -32,7 +32,7 @@ const FavoriteCard = ({ item, index }: CardProps) => {
       </div>
       <div className="flex flex-col p-1 pr-2 justify-center gap-1 md:max-w-36">
         {index ? (
-          <h1 className="text-5xl font-bold text-gray-200">#{index}</h1>
+          <div className="text-5xl font-bold text-gray-200">#{index}</div>
         ) : null}
         <p className="break-words text-sm text-gray-500 w-full">{item.title}</p>
         <p>{item.format ?? null}</p>

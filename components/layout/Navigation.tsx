@@ -11,7 +11,8 @@ const navList = [
   { name: "Blogs", href: "/blogs" },
   { name: "Projects", href: "/projects" },
   { name: "Anime Zone", href: "/random/animes" },
-  { name: "World Map", href: "/random/countries" }
+  { name: "World Map", href: "/random/countries" },
+  { name: "Recommendations", href: "/random/recommendations" }
 ];
 
 export const Navbar = () => {
