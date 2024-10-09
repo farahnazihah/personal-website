@@ -3,6 +3,7 @@ import { FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
 import Timeline from "@/components/timeline";
 import resume from "../data/resume.json";
 import { FaRegEnvelope } from "react-icons/fa";
+import useTracker from "./hooks/useTracker";
 
 function Profile() {
   return (
@@ -42,6 +43,9 @@ function Profile() {
 }
 
 export default function Home() {
+  const tracker = useTracker();
+  tracker.page_visit("Profile page");
+
   return (
     <div className="flex flex-col items-center justify-center gap-16  md:py-16">
       <Profile />
