@@ -1,5 +1,3 @@
-"use client";
-
 import useTracker from "@/app/hooks/useTracker";
 import dynamic from "next/dynamic";
 import { IoInformationCircleOutline } from "react-icons/io5";

@@ -7,9 +7,7 @@ export enum EnumEvent {
 
 const useTracker = () => {
   const mixpanel = Mixpanel.init(process.env.MIXPANEL_TOKEN ?? "", {
-    debug: true,
-    protocol: "http",
-    keepAlive: false
+    debug: true
   });
 
   const page_visit = (page_title: string, rest?: object) => {
