@@ -5,9 +5,15 @@ import { EnumBlogCategory } from "@/types/Blog";
 import { TemplateText } from "@/components/layout/Template";
 
 import "../../blogs.scss";
+import useTracker from "@/app/hooks/useTracker";
 
 const Blogs = ({ params }: { params: { category: string } }) => {
   const blogs = getSortedArticles(params.category);
+
+  const tracker = useTracker();
+  tracker.page_visit("list of blogs", {
+    category: params.category ?? EnumBlogCategory.ALL
+  });
 
   return (
     <section className="article w-full">

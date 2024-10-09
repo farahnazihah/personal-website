@@ -10,12 +10,16 @@ import { blogCategories } from "@/types/Blog";
 
 import "../blogs.scss";
 import Image from "next/image";
+import useTracker from "@/app/hooks/useTracker";
 
 const Blog = async ({ params }: { params: { slugs: string } }) => {
   if ((params.slugs as string) === "categories") {
     redirect("/blogs/categories/all");
   }
   const articleData = await getArticleData(params.slugs);
+
+  const tracker = useTracker();
+  tracker.page_visit("Blog page", { blog_title: articleData.title });
 
   return (
     <section className="blog">

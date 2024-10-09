@@ -1,5 +1,6 @@
 "use client";
 
+import useTracker from "@/app/hooks/useTracker";
 import dynamic from "next/dynamic";
 import { IoInformationCircleOutline } from "react-icons/io5";
 
@@ -26,6 +27,9 @@ const data = [
 ];
 
 export default function Traces() {
+  const tracker = useTracker();
+  tracker.page_visit("Countries page");
+
   return (
     <div className="py-12">
       <h1 className="title">{"Countries I've been to"}</h1>
