@@ -22,47 +22,50 @@ const Blog = async ({ params }: { params: { slugs: string } }) => {
   tracker.page_visit("Blog page", { blog_title: articleData.title });
 
   return (
-    <section className="blog">
+    <>
       {articleData.banner ? (
-        <div className="relative w-full h-32 mb-8 blur-[2px]">
+        <div className="absolute left-0 w-full h-24 blur-[1px]">
           <Image
             objectFit="cover"
             fill
             src={articleData.banner?.link}
             alt={articleData.banner?.alt}
-            className="w-full h-20"
+            className="w-full h-24"
           />
         </div>
       ) : null}
-      <article className="article max-w-screen-md">
-        <Link
-          href="/blogs"
-          className="flex flex-row gap-2 items-center font-bold "
-        >
-          <IoMdArrowRoundBack /> Back
-        </Link>
+      <div className="h-32"></div> {/* space for the banner */}
+      <section className="blog">
+        <article className="article max-w-screen-md">
+          <Link
+            href="/blogs"
+            className="flex flex-row gap-2 items-center font-bold "
+          >
+            <IoMdArrowRoundBack /> Back
+          </Link>
 
-        <h1>{articleData.title}</h1>
-        <div className="flex flex-wrap gap-2 text-tosca my-4">
-          Categories:{" "}
-          {articleData.category
-            ? articleData.category.map((c, idx) => (
-                <div key={idx}>{blogCategories[c]}</div>
-              ))
-            : null}
-        </div>
-        <p className="text-gray-400 text-sm">{articleData.date}</p>
-        <ReactMarkdown rehypePlugins={[rehypeRaw] as PluggableList}>
-          {articleData.contentHtml}
-        </ReactMarkdown>
-        <Link
-          href="/blogs"
-          className="flex flex-row gap-2 items-center font-bold my-4"
-        >
-          <IoMdArrowRoundBack /> Back to blogs
-        </Link>
-      </article>
-    </section>
+          <h1>{articleData.title}</h1>
+          <div className="flex flex-wrap gap-2 text-tosca my-4">
+            Categories:{" "}
+            {articleData.category
+              ? articleData.category.map((c, idx) => (
+                  <div key={idx}>{blogCategories[c]}</div>
+                ))
+              : null}
+          </div>
+          <p className="text-gray-400 text-sm">{articleData.date}</p>
+          <ReactMarkdown rehypePlugins={[rehypeRaw] as PluggableList}>
+            {articleData.contentHtml}
+          </ReactMarkdown>
+          <Link
+            href="/blogs"
+            className="flex flex-row gap-2 items-center font-bold my-8"
+          >
+            <IoMdArrowRoundBack /> Back to blogs
+          </Link>
+        </article>
+      </section>
+    </>
   );
 };
 
