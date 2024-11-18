@@ -11,6 +11,7 @@ import { blogCategories } from "@/types/Blog";
 import "../blogs.scss";
 import Image from "next/image";
 import useTracker from "@/app/hooks/useTracker";
+import Head from "next/head";
 
 const Blog = async ({ params }: { params: { slugs: string } }) => {
   if ((params.slugs as string) === "categories") {
@@ -21,8 +22,31 @@ const Blog = async ({ params }: { params: { slugs: string } }) => {
   const tracker = useTracker();
   tracker.page_visit("Blog page", { blog_title: articleData.title });
 
+  const siteMetadata = {
+    title: "Farah Nazihah's Blog",
+    author: "Farah Nazihah",
+    headerTitle: "Farah Nazihah",
+    language: "en-us",
+    siteUrl:
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000"
+        : "https://www.farahnazihah.com",
+    siteRepo: "https://github.com/farahnazihah/personal-web",
+    github: "https://github.com/farahnazihah",
+    locale: "en-US"
+  };
+
   return (
     <>
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="farahnazihah.com" />
+        <meta name="twitter:title" content="" />
+        <meta
+          name="twitter:image"
+          content={`${siteMetadata.siteUrl}/images/${articleData.banner?.link}`}
+        />
+      </Head>
       {articleData.banner ? (
         <div className="absolute left-0 w-full h-24 blur-[1px]">
           <Image
