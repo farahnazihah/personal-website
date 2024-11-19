@@ -39,25 +39,37 @@ const Blog = async ({ params }: { params: { slugs: string } }) => {
   return (
     <>
       <Head>
-        <title>My Personal Website</title>
+        <title>{articleData.title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content={articleData.snippet} />
+        <meta name="keywords" content={articleData.category?.join(",")} />
+        <meta property="og:title" content={articleData.title} />
+        <meta property="og:description" content={articleData.snippet} />
         <meta
-          name="description"
-          content="A brief description of your website"
+          property="og:image"
+          content="https://itheorie-assets.fra1.cdn.digitaloceanspaces.com/namb.ch/nothelfer-header-min.jpeg"
         />
-        <meta property="og:title" content="My Personal Website" />
+        <meta property="og:url" content="https://www.nothelferambahnhof.ch/" />
+        <meta name="twitter:title" content={articleData.title} />
+        <meta name="twitter:description" content={articleData.snippet} />
         <meta
-          property="og:description"
-          content="A brief description of your website"
+          name="twitter:image"
+          content="https://itheorie-assets.fra1.cdn.digitaloceanspaces.com/namb.ch/nothelfer-header-min.jpeg"
         />
-        <meta property="og:image" content="/path/to/your/image.jpg" />
-        <meta property="og:url" content="https://your-website.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="My Personal Website" />
-        <meta
-          name="twitter:description"
-          content="A brief description of your website"
+        <link
+          rel="sitemap"
+          type="application/xml"
+          title="Sitemap"
+          href="/sitemap.xml"
         />
-        <meta name="twitter:image" content="/path/to/your/image.jpg" />
+        <link
+          rel="sitemap"
+          type="application/xml"
+          title="Sitemap"
+          href="/server-sitemap-index.xml"
+        />
       </Head>
       {articleData.banner ? (
         <div className="absolute left-0 w-full h-24 blur-[1px]">
