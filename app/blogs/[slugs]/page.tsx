@@ -12,6 +12,33 @@ import "../blogs.scss";
 import Image from "next/image";
 import useTracker from "@/app/hooks/useTracker";
 import Head from "next/head";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Farah Nazihah's Blog",
+  description: "Farah Nazihah's Blog",
+  openGraph: {
+    title: "Farah Nazihah's Blog",
+    description: "Farah Nazihah's Blog",
+    images: [
+      {
+        url: "https://itheorie-assets.fra1.cdn.digitaloceanspaces.com/namb.ch/nothelfer-header-min.jpeg",
+        alt: "Farah Nazihah's Blog"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Farah Nazihah's Blog",
+    description: "Farah Nazihah's Blog",
+    images: [
+      {
+        url: "https://itheorie-assets.fra1.cdn.digitaloceanspaces.com/namb.ch/nothelfer-header-min.jpeg",
+        alt: "Farah Nazihah's Blog"
+      }
+    ]
+  }
+};
 
 const Blog = async ({ params }: { params: { slugs: string } }) => {
   if ((params.slugs as string) === "categories") {
