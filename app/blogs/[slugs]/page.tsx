@@ -40,6 +40,42 @@ export const metadata: Metadata = {
   }
 };
 
+export async function generateMetadata({
+  params
+}: {
+  params: { slugs: string };
+}): Promise<Metadata> {
+  if ((params.slugs as string) === "categories") {
+    redirect("/blogs/categories/all");
+  }
+  const articleData = await getArticleData(params.slugs);
+
+  return {
+    title: articleData.title,
+    description: articleData.snippet,
+    openGraph: {
+      title: articleData.title,
+      description: articleData.snippet,
+      images: [
+        {
+          url: articleData.banner?.link || "",
+          alt: articleData.banner?.alt || "Farah Nazihah's Blog"
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: articleData.title,
+      description: articleData.snippet,
+      images: [
+        {
+          url: articleData.banner?.link || "",
+          alt: articleData.banner?.alt || "Farah Nazihah's Blog"
+        }
+      ]
+    }
+  };
+}
 const Blog = async ({ params }: { params: { slugs: string } }) => {
   if ((params.slugs as string) === "categories") {
     redirect("/blogs/categories/all");
