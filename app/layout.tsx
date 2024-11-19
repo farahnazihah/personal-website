@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Poppins } from "next/font/google";
@@ -21,11 +20,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900"
 });
-
-export const metadata: Metadata = {
-  title: "Farah Nazihah",
-  description: "Farah Nazihah's personal website"
-};
 
 export default function RootLayout({
   children
