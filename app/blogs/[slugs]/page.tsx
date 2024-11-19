@@ -22,30 +22,42 @@ const Blog = async ({ params }: { params: { slugs: string } }) => {
   const tracker = useTracker();
   tracker.page_visit("Blog page", { blog_title: articleData.title });
 
-  const siteMetadata = {
-    title: "Farah Nazihah's Blog",
-    author: "Farah Nazihah",
-    headerTitle: "Farah Nazihah",
-    language: "en-us",
-    siteUrl:
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3000"
-        : "https://www.farahnazihah.com",
-    siteRepo: "https://github.com/farahnazihah/personal-web",
-    github: "https://github.com/farahnazihah",
-    locale: "en-US"
-  };
+  // const siteMetadata = {
+  //   title: "Farah Nazihah's Blog",
+  //   author: "Farah Nazihah",
+  //   headerTitle: "Farah Nazihah",
+  //   language: "en-us",
+  //   siteUrl:
+  //     process.env.NODE_ENV === "development"
+  //       ? "http://localhost:3000"
+  //       : "https://www.farahnazihah.com",
+  //   siteRepo: "https://github.com/farahnazihah/personal-web",
+  //   github: "https://github.com/farahnazihah",
+  //   locale: "en-US"
+  // };
 
   return (
     <>
       <Head>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="farahnazihah.com" />
-        <meta name="twitter:title" content="" />
+        <title>My Personal Website</title>
         <meta
-          name="twitter:image"
-          content={`${siteMetadata.siteUrl}/images/${articleData.banner?.link}`}
+          name="description"
+          content="A brief description of your website"
         />
+        <meta property="og:title" content="My Personal Website" />
+        <meta
+          property="og:description"
+          content="A brief description of your website"
+        />
+        <meta property="og:image" content="/path/to/your/image.jpg" />
+        <meta property="og:url" content="https://your-website.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="My Personal Website" />
+        <meta
+          name="twitter:description"
+          content="A brief description of your website"
+        />
+        <meta name="twitter:image" content="/path/to/your/image.jpg" />
       </Head>
       {articleData.banner ? (
         <div className="absolute left-0 w-full h-24 blur-[1px]">
