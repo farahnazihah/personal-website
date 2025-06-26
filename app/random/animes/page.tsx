@@ -8,7 +8,12 @@ export const revalidate = 3600; // revalidate every hour
 
 const Animes = async () => {
   const res = await getFavorites();
-  const { animes: favAnimes, characters: favCharacters, manga: favManga } = res;
+  const {
+    animes: favAnimes,
+    characters: favCharacters,
+    manga: favManga,
+    depressionKit,
+  } = res;
   const { activity } = await getActivity();
 
   const tracker = useTracker();
@@ -52,6 +57,14 @@ const Animes = async () => {
         items={favManga}
         title={"Manga & Novels"}
         subtitle={"I also read, you know"}
+        ranked
+      />
+      <FavSection
+        items={depressionKit ?? []}
+        title={"Depression Kit"}
+        subtitle={
+          "You have to watch these in order. I'm not joking. Don't cherry pick, just watch."
+        }
         ranked
       />
     </section>
